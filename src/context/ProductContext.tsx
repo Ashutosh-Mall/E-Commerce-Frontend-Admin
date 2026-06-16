@@ -77,7 +77,6 @@ export const ProductProvider = ({children}: ProductProviderProps) => {
       const response = await axios.get(`${API}/admin/products/get`, {
         withCredentials: true,
       });
-      console.log(response.data);
       setAllProducts(response.data.data);
     } catch (error) {
       console.error("Get Products Error:", error);

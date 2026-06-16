@@ -5,13 +5,16 @@ import App from "./App.tsx";
 import {BrowserRouter} from "react-router-dom";
 import {AuthProvider} from "./context/AuthContext.tsx";
 import {ProductProvider} from "./context/ProductContext.tsx";
+import {UserProvider} from "./context/UserContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
         <ProductProvider>
-          <App />
+          <UserProvider>
+            <App />
+          </UserProvider>
         </ProductProvider>
       </AuthProvider>
     </BrowserRouter>
